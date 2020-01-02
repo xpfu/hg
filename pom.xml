@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.fxp</groupId>
+    <artifactId>hg</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>hg-common</module>
+        <module>hg-generator</module>
+        <module>hg-security</module>
+        <module>hg-admin</module>
+        <module>hg-search</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <!-- hg项目通用模块 -->
+        <hg.common.version>1.0</hg.common.version>
+        <!-- hg项目生成代码模块 -->
+        <hg.generator.version>1.0</hg.generator.version>
+        <!-- hg项目安全代码模块 -->
+        <hg.security.version>1.0</hg.security.version>
+        <!-- Mybatis分页插件starter -->
+        <mybatis.pagehelper.starter.version>1.2.10</mybatis.pagehelper.starter.version>
+        <!-- Mybatis分页插件 -->
+        <mybatis.pagehelper.version>5.1.8</mybatis.pagehelper.version>
+        <!-- 集成DRUID连接池 -->
+        <druid.version>1.1.10</druid.version>
+        <!-- HuTool java工具包 -->
+        <hutool.version>4.5.7</hutool.version>
+        <!-- SwaggerUI API文档生成工具 -->
+        <swagger2.version>2.7.0</swagger2.version>
+        <!-- Mybatis 代码生成器 -->
+        <mybatis.generator.version>1.3.7</mybatis.generator.version>
+        <!-- Mybatis -->
+        <mybatis.version>3.4.6</mybatis.version>
+        <!-- Mysql数据库驱动 -->
+        <mysql.connector.version>8.0.15</mysql.connector.version>
+        <!-- SpringData工具包 -->
+        <spring.data.commons.version>2.1.5.RELEASE</spring.data.commons.version>
+        <!-- JWT登录支持 -->
+        <jjwt.version>0.9.0</jjwt.version>
+        <!-- 阿里云OSS -->
+        <aliyun.oss.version>2.5.0</aliyun.oss.version>
+        <!-- 集成logStash -->
+        <logstash.logback.version>4.8</logstash.logback.version>
+        <!-- fastJson -->
+        <fastjson.version>1.2.54</fastjson.version>
+        <!-- shiro spring -->
+        <shiro.spring.version>1.4.0</shiro.spring.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- hg项目通用模块 -->
+            <dependency>
+                <groupId>com.fxp</groupId>
+                <artifactId>hg-common</artifactId>
+                <version>${hg.common.version}</version>
+            </dependency>
+
+            <!-- hg项目生成代码模块 -->
+            <dependency>
+                <groupId>com.fxp</groupId>
+                <artifactId>hg-generator</artifactId>
+                <version>${hg.generator.version}</version>
+            </dependency>
+
+            <!-- hg项目安全代码模块 -->
+            <dependency>
+                <groupId>com.fxp</groupId>
+                <artifactId>hg-security</artifactId>
+                <version>${hg.security.version}</version>
+            </dependency>
+
+            <!-- Mybatis分页插件starter -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${mybatis.pagehelper.starter.version}</version>
+            </dependency>
+
+            <!-- Mybatis分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${mybatis.pagehelper.version}</version>
+            </dependency>
+
+            <!-- 集成DRUID连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- HuTooTool java工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- SwaggerUI API文档生成工具 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+
+            <!-- MyBatis生成器 -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${mybatis.generator.version}</version>
+            </dependency>
+
+            <!-- Mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
+            <!-- Mysql数据库驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+
+            <!-- SpringData工具包 -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons</artifactId>
+                <version>${spring.data.commons.version}</version>
+            </dependency>
+
+            <!-- JWT登录支持 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- 阿里云OSS -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.oss.version}</version>
+            </dependency>
+
+            <!-- 集成logStash -->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash.logback.version}</version>
+            </dependency>
+
+            <!-- fast json工具 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- shiro spring工具 -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.spring.version}</version>
+            </dependency>
+      </dependencies>
+    </dependencyManagement>
+
+</project>
