@@ -91,7 +91,7 @@
         <!-- 集成logStash -->
         <logstash.logback.version>4.8</logstash.logback.version>
         <!-- fastJson -->
-        <fastjson.version>1.2.54</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <!-- shiro spring -->
         <shiro.spring.version>1.4.0</shiro.spring.version>
     </properties>
