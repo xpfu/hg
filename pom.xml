@@ -81,7 +81,7 @@
         <!-- Mybatis -->
         <mybatis.version>3.4.6</mybatis.version>
         <!-- Mysql数据库驱动 -->
-        <mysql.connector.version>8.0.15</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
         <!-- SpringData工具包 -->
         <spring.data.commons.version>2.1.5.RELEASE</spring.data.commons.version>
         <!-- JWT登录支持 -->
